@@ -32,7 +32,7 @@ class FormServiceProvider extends LaravelServiceProvider
       // Components\Input\Image::class,
       // Components\Input\Month::class,
       // Components\Input\Number::class,
-      // Components\Input\Password::class,
+      Components\Input\Password::class,
       // Components\Input\Phone::class,
       // Components\Input\Radio::class,
       // Components\Input\Range::class,
