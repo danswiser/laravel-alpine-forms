@@ -1,0 +1,31 @@
+{
+    "name": "danswiser/laravel-alpine-forms",
+    "description": "A set of AlpineJS form inputs for use with Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Wiser",
+            "email": "dan@wiser.ws"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "LaravelAlpineForms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelAlpineForms\\FormServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/view": "^9.0",
+        "illuminate/support": "^9.0",
+        "illuminate/http": "^9.0"
+    }
+}
