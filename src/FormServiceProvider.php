@@ -38,7 +38,7 @@ class FormServiceProvider extends LaravelServiceProvider
       // Components\Input\Range::class,
       // Components\Input\Reset::class,
       // Components\Input\Search::class,
-      // Components\Input\Submit::class,
+      Components\Input\Submit::class,
       // Components\Input\Tel::class,
       Components\Input\Text::class,
       // Components\Input\Time::class,
