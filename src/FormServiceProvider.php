@@ -16,7 +16,7 @@ class FormServiceProvider extends LaravelServiceProvider
   public function boot()
   {
     $this->callAfterResolving(BladeCompiler::class, function ($blade) {
-        // $blade->component('form', Components\Form::class);
+        $blade->component('form', Components\Form::class);
     });
 
     $this->loadViewComponentsAs('input', [
