@@ -1,6 +1,6 @@
 <div
     x-data="{ value: '{{ old($name) }}', errors: {{ json_encode($errors->get($name)) }} }"
-    {{ $attributes->whereDoesntStartWith('x-')->merge(['class' => 'col-span-2 mt-6']) }}>
+    {{ $attributes->whereDoesntStartWith('x-')->merge(['class' => 'my-4']) }}>
     <div class="flex justify-between">
         <label for="{{ $name }}" class="block text-sm font-medium text-gray-700">{{ $label }}</label>
         <span class="text-sm text-gray-500"></span>
