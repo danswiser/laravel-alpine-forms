@@ -17,7 +17,7 @@ class FormServiceProvider extends LaravelServiceProvider
   {
     $this->callAfterResolving(BladeCompiler::class, function ($blade) {
       $blade->component('form', Components\Form::class);
-      // $blade->component('select', Components\Select::class);
+      $blade->component('select', Components\Select::class);
       // $blade->component('select', Components\Textarea::class);
     });
 
