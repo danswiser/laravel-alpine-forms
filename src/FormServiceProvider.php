@@ -30,7 +30,7 @@ class FormServiceProvider extends LaravelServiceProvider
       // Components\Input\DatetimeLocal::class,
       // Components\Input\Email::class,
       // Components\Input\File::class,
-      // Components\Input\Hidden::class,
+      Components\Input\Hidden::class,
       // Components\Input\Image::class,
       // Components\Input\Month::class,
       Components\Input\Number::class,
