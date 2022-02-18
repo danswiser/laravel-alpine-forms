@@ -16,7 +16,9 @@ class FormServiceProvider extends LaravelServiceProvider
   public function boot()
   {
     $this->callAfterResolving(BladeCompiler::class, function ($blade) {
-        $blade->component('form', Components\Form::class);
+      $blade->component('form', Components\Form::class);
+      // $blade->component('select', Components\Select::class);
+      // $blade->component('select', Components\Textarea::class);
     });
 
     $this->loadViewComponentsAs('input', [
@@ -44,14 +46,27 @@ class FormServiceProvider extends LaravelServiceProvider
       // Components\Input\Time::class,
       // Components\Input\Url::class,
       // Components\Input\Week::class,
-      
-      // Components\Select::class,
-      // Components\Textarea::class,
     ]);
 
     $this->loadViewsFrom(__DIR__.'/Views', 'components');
     $this->publishes([
-        __DIR__.'/Views' => resource_path('views/vendor/components'),
+      __DIR__.'/Views' => resource_path('views/vendor/components'),
     ]);
+
+    $this->publishes([
+      __DIR__.'/Config/alpine-forms.php' => config_path('alpine-forms.php'),
+    ]);
+  }
+
+  /**
+   * Register any application services.
+   *
+   * @return void
+   */
+  public function register()
+  {
+    $this->mergeConfigFrom(
+      __DIR__.'/Config/alpine-forms.php', 'alpine-forms'
+    );
   }
 }
