@@ -4,19 +4,10 @@ namespace LaravelAlpineForms\Components\Input;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\View\Component;
 use Illuminate\Support\Facades\View;
 
-class Number extends Component
+class Number extends Input
 {
-    /**
-     * The input name attribute.
-     */
-    public string $name;
-    /**
-     * The input label element.
-     */
-    public string $label;
     /**
      * The maximum value to accept for this input.
      */
@@ -38,13 +29,13 @@ class Number extends Component
      *
      * @return void
      */
-    public function __construct($name = "text", $label = "Number Input", $max = "none", $min = "none", $step = 1)
+    public function __construct($name = "text", $label = "Number Input", $placeholder = null, $max = "none", $min = "none", $step = 1)
     {
-        $this->name     = $name;
-        $this->label    = $label;
-        $this->max      = $max;
-        $this->min      = $min;
-        $this->step     = $step;
+        parent::__construct($name, $label, $placeholder);
+
+        $this->max  = $max;
+        $this->min  = $min;
+        $this->step = $step;
     }
 
     /**

@@ -18,6 +18,7 @@
             return this.value = this.max
         }
     }"
+    id="{{ $id }}"
     {{ $attributes->whereDoesntStartWith('x-')->merge(['class' => 'my-4']) }}>
     <label for="{{ $name }}" class="block text-sm font-medium text-gray-700">{{ $label }}</label>
     <div class="mt-1 flex rounded-md shadow-sm">

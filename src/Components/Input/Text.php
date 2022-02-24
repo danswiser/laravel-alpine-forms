@@ -4,30 +4,10 @@ namespace LaravelAlpineForms\Components\Input;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\View\Component;
 use Illuminate\Support\Facades\View;
 
-class Text extends Component
+class Text extends Input
 {
-    /**
-     * The input name attribute.
-     *
-     * @var string
-     */
-    public $name;
-    /**
-     * The input label element.
-     *
-     * @var string
-     */
-    public $label;
-    /**
-     * The input placeholder.
-     *
-     * @var string
-     */
-    public $placeholder;
-
     /**
      * Create a new component instance.
      *
@@ -38,9 +18,7 @@ class Text extends Component
      */
     public function __construct($name = "text", $label = "Text Input", $placeholder = null)
     {
-        $this->name         = $name;
-        $this->label        = $label;
-        $this->placeholder  = $placeholder ?? "Enter $label";
+        parent::__construct($name, $label, $placeholder);
     }
 
     /**

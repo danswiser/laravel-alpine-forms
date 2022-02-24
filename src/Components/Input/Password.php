@@ -4,29 +4,14 @@ namespace LaravelAlpineForms\Components\Input;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\View\Component;
 use Illuminate\Support\Facades\View;
 
-class Password extends Component
+class Password extends Input
 {
     /**
-     * The input name attribute.
-     *
-     * @var string
-     */
-    public $name;
-    /**
-     * The input label element.
-     *
-     * @var string
-     */
-    public $label;
-    /**
      * Whether or not the password is obscured.
-     *
-     * @var bool
      */
-    public $obscured = true;
+    public bool $obscured = true;
 
     /**
      * Create a new component instance.
@@ -36,10 +21,9 @@ class Password extends Component
      *
      * @return void
      */
-    public function __construct($name = "text", $label = "Text Input")
+    public function __construct($name = "text", $label = "Text Input", $placeholder = null)
     {
-        $this->name         = $name;
-        $this->label        = $label;
+        parent::__construct($name, $label, $placeholder);
     }
 
     /**
